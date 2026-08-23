@@ -105,7 +105,11 @@ From a working list we keep, plus an external register review.
   use" does not). **(b) fix the generator** — signposting belongs to structure
   (headings, chapter order), not to prose; an instruction that asks each chapter
   to announce itself will produce this tic once per chapter, so amend the
-  instruction, not just the output.
+  instruction, not just the output. **(c) delete, never trim** — one instance
+  survived a cleanup pass because it was reworded (its tail clause cut) instead
+  of deleted, and the reviewer caught it a second time: a trimmed tic is still
+  a tic; the fix for a matched tic is deletion or replacement with object-level
+  content, not a shorter version of the narration.
 
 Signposts are the cheapest cut: "Now the problem, which comes from the code."
 "Here is my difficulty." Three of those pointed at things the reader was about
