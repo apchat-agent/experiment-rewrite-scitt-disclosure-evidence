@@ -1188,3 +1188,38 @@ words, sentences containing a connective in the single digits as a
 percentage — the register of the versions the reviewer accepted. §12.4's
 evidence and this scoping are one position: conserve relations, spend
 connective words like money.
+
+## 27. Author from a pyramid, not from the source's outline (added 2026-08-24 01:0x — the missing structure carrier)
+
+The reviewer on the transfer re-authoring: "structure is also sloppier". The
+transfer arm kept the source's top-level order 1-10 and reordered inside one
+chapter. The version with the structure the reviewer preferred was built by a
+PROCEDURE this document never stated — a re-author that starts from the
+source's outline inherits the source's structure by default, because
+conserving what exists is always the cheapest reading of the rules.
+
+The procedure: 
+1. **Build the pyramid bottom-up before writing anything.** L1: one entry per
+   source section, 1-3 sentences, faithful. L2: one paragraph per chapter,
+   from the L1 entries. L3: ONE paragraph that carries the whole document.
+   Where a summary needs a fact the source never gives, the [GAP:] mark is
+   made HERE — the pyramid is also the gap detector.
+2. **Derive the chapter order from L2, not from the source.** For each
+   chapter, list what it needs already defined. The order that needs no
+   forward reference is the outline (§14 at chapter scale). Record the
+   mapping new-order -> source-sections; the reordering rationale is one
+   paragraph.
+3. **Unwind top-down.** The abstract is L3 translated to position zero
+   (§14's corollary: translated, not copied). Each chapter is written from
+   its L2 paragraph, expanded with the L1 facts, in the register of §25/§26.
+   The reader at any point holds everything the text uses.
+4. **Restore normative strength by mapping** (§11's freeze or a bidirectional
+   requirement map source-sentence -> new-sentence at equal strength), as a
+   separate pass by a separate set of eyes than the writer of step 3.
+
+Why a procedure in a rules document: rules that state PROPERTIES of good
+structure (definition-before-use, one home per rule) let an author satisfy
+them minimally inside the inherited outline. The pyramid forces the outline
+itself to be re-derived from content. The one run that used it produced the
+structure the reviewer preferred; the one run that had only the properties
+did not.
