@@ -918,3 +918,19 @@ The example pair, verbatim:
   > are payloads for registration as Signed Statements on a SCITT Transparency
   > Service [RFC9943], whose append-only log a third party can audit:
   (followed directly by the two definitions).
+
+**Reviewer's ruling (2026-08-23 23:41), replacing the boundary above — the hard
+form of the rule holds:** *"It is entirely useless to include anything that the
+document does not do. Everything the document does is written in it. Everything
+else is what it doesn't do — and if one feels the need to mention it
+specifically, then the wording of what the document does needs to be honed."*
+
+So the does-not-CLAIM class does not survive as an exception. **The urge to
+write a negative is a defect signal in the positive statement: hone the
+positive until the negative has nothing left to deny.** "It is the Issuer's
+signed claim that a transformation was applied" — written precisely, that
+sentence already excludes proof; "it is not proof" adds nothing a precise
+positive did not already say. Scope of the rule: DESCRIPTIVE negatives.
+Normative MUST NOT sentences are conduct rules — obligations the document
+places on implementations — and are the document doing something, not prose
+about what it does not do.
