@@ -822,3 +822,19 @@ Test, reviewing form: **read each empirical or existence claim alone. Can the
 reader reach the evidence from there, without searching the document?** A
 reference that exists somewhere else in the document does not pass; claim and
 evidence separated is a finding, even when both are present.
+
+The example pair, verbatim (ayourtch: "this is exactly 'what to do' and 'what
+not to do'"):
+
+- **What not to do** (the claim as it stood, intro paragraph 1):
+  > More and more of these systems produce signed, hash-chained access
+  > receipts, and several receipt formats exist.
+  The four supporting drafts were cited four paragraphs later, in related work.
+
+- **What to do** (the accepted fix — references attached at the claim):
+  > More and more of these systems produce signed, hash-chained access
+  > receipts, and several receipt formats exist
+  > [I-D.farley-acta-signed-receipts] [I-D.marques-asqav-compliance-receipts]
+  > [I-D.chueayen-attestation-receipts] [I-D.aylward-aiga-2].
+  The related-work paragraph stays, and keeps the discussion (who uses
+  Ed25519/JCS); it just no longer houses the only pointer.
