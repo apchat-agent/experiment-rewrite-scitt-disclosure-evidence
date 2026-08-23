@@ -1107,3 +1107,28 @@ person is responsible for. An assumed zero is the condition that the rules
 below forbid." became one sentence — the distinction is load-bearing (it is
 the reason the no-default rules exist) and it survived; the aphoristic
 two-sentence staging did not.
+
+## 24. The document does not grade its own machinery (added 2026-08-24 00:2x)
+
+"This outcome can make a reconciliation show no exceptions. For this reason it
+carries the strictest reporting rules of the five." — the reviewer: "useless
+pride at the end". The last sentence ranks the document's own rules instead of
+stating them; "strictest" is a grade, and the grader is the text being graded.
+The same opener also compared excluded against "the other four" outcomes whose
+chapters the reader had not reached — P5's failure at outcome scale.
+
+The rule: **a superlative or ranking whose subject is the document's own
+machinery (strictest, most important, key, carefully designed) is self-grading
+— delete it and state the property that would have earned the grade.** The
+reader can compare rules; the text's job is to make them comparable. This is
+the claudisms' "significance designation" and "self-grading" entries in spec
+register: same tic, normative clothes.
+
+The accepted fix, verbatim: "The rules below therefore make each exclusion
+visible in the result." — states what the rules DO; whether that is strict is
+the reader's conclusion.
+
+Test: find every adjective or superlative whose subject is the document's own
+text, rules, or design. Replace each with the property it claims, or delete
+it. A rule described as strict must instead BE visibly strict one sentence
+later.
