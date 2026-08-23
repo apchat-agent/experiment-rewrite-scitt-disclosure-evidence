@@ -1136,3 +1136,55 @@ Test: find every adjective or superlative whose subject is the document's own
 text, rules, or design. Replace each with the property it claims, or delete
 it. A rule described as strict must instead BE visibly strict one sentence
 later.
+
+## 25. Strict vocabulary with a named exemption list (added 2026-08-24 01:0x — the missing crispness carrier)
+
+The transfer run of 00:3x reproduced the session's catches but came out less
+crisp than the session's own product. Diagnosis by paragraph pair: the
+transfer arms wrote "the receipt chain does not reveal this", "silent about
+records that were never created", "needs a second account of activity" —
+metaphor and invented semantics that the session's product had eliminated.
+The crispness lived in a METHOD that never made it into this document: the
+strict-STE vocabulary pass. This section captures it.
+
+The rule: **every word is plain, literal, and single-meaning, unless it is on
+the document's own exemption list.** The exemption list is exactly: the
+document's defined terms (its Terminology section), registry values, standard
+names (protocol names, algorithm names, RFC numbers), and BCP 14 keywords.
+
+Mechanics that make it enforceable:
+- **One word per concept.** Keep a glossary while writing: concept -> chosen
+  word -> words it replaced (show <- reveal/surface; status <- standing;
+  bind <- pin/anchor). A second word for a concept already named is a defect.
+- **Literal verbs only**: be, have, make, get, show, give, use, apply,
+  compare, record, sign, reject, contain, define. A chain is never "silent";
+  it "does not show". Evidence never "rests on" anything; a result "depends
+  on" it. No personification, no metaphor, no coined noun ("disclosure
+  surface", "account of activity" for a record).
+- **The exemption ledger is the deliverable that proves compliance**: every
+  kept word that is neither plain nor on the exemption list, one line of
+  justification each. A short ledger is the measurement of crispness; a
+  growing ledger says the vocabulary is drifting.
+
+## 26. The relation is carried by order first, connective last (added 2026-08-24 01:0x — scoping §12 by the reviewer's standing verdict)
+
+§12 stands: a split must conserve the relation. But the transfer arms read
+§12 as "restore connective words" and produced connective shares of 10-11%
+against the 5% of both the source and every version the reviewer preferred —
+and §12.4's only human data point already ran against connective restoration.
+This section scopes HOW a relation is conserved, in order of preference:
+
+1. **Order**: cause before effect, condition before consequence — adjacency
+   carries the relation with no word at all.
+2. **A colon**: rule, colon, reason (§23's accepted form).
+3. **Noun repetition**: the second sentence opens with the noun the first
+   ended on; the echo is the link.
+4. **A connective word** (therefore, because, but) — LAST resort, only where
+   a reader would demonstrably take the wrong relation without it, and never
+   to fuse two sentences that each stand alone.
+
+Target texture, stated as numbers so it is checkable: sentence-median ~10-12
+words, sentences containing a connective in the single digits as a
+percentage — the register of the versions the reviewer accepted. §12.4's
+evidence and this scoping are one position: conserve relations, spend
+connective words like money.
