@@ -972,3 +972,28 @@ Test: label every sentence in the block N, M, or C. A sentence that takes no
 label, or repeats a label without adding a fact, dies. If a block needs two M
 sentences, the problem is probably two problems — split it and each gets its
 own N/M/C.
+
+## 20. ASCII punctuation in deliverable text (added 2026-08-23 late, from a live mojibake)
+
+The reviewer's browser rendered every em dash in the served document as
+"â€œ-class garbage: the file was clean UTF-8, the HTTP server sent no charset,
+the browser guessed Latin-1. The em dash is the highest-frequency non-ASCII
+character in machine-written prose, so it is the first thing to break — and it
+is already flagged in the claudisms list for density.
+
+The rule: **in deliverable technical text, punctuation is ASCII.** The em dash
+dies twice over: as a register marker (claudisms list) and as the character
+most likely to hit a charset-naive pipeline (browsers without a declared
+charset, terminals, diff tools, RFC text format, which is ASCII-first by
+tradition). Replace each by role: a colon when the dash introduces an
+explanation or consequence; a comma pair for an aside — or lift the aside into
+its own sentence; a period when the dash splices two clauses. Hyphens in
+compound words are ASCII already and stay.
+
+Boundary: non-ASCII LETTERS in proper names (Doğru) are content, not
+punctuation — they stay, and the serving layer must declare UTF-8 for them
+(fix the pipeline AND the punctuation; the name is not negotiable, the dash
+is).
+
+Test: `grep -nP '[^\x00-\x7F]'` over the deliverable — every hit must be a
+letter in a name or a quoted example, never punctuation.
