@@ -759,3 +759,32 @@ exists to serve.
 
 **The rule is left in place and the evidence against it is recorded beside it.
 Anyone applying §12 should know that the first time it met a human it lost.**
+
+## 14. Vocabulary follows reader state (added 2026-08-23 late, from the abstract that failed and the one that worked)
+
+A sentence may use only what the reader holds at that position in the document.
+
+The rule generalizes an evening of abstract-writing. The first abstract of a
+pyramid-built re-authoring served the pyramid's top summary layer nearly as-is:
+three paragraphs, full of the document's own defined terms (Disclosure, Window,
+Item, Mapping Profile), plus a citation. The reader's feedback: one paragraph,
+about the size of the then-third paragraph, and no localized words. The fix that
+was accepted on first try: one compact paragraph, every defined term replaced
+with a plain-language paraphrase, citation removed.
+
+- **Position zero.** The abstract is read before anything is defined. It gets a
+  fixed budget of ONE compact paragraph and no locally-defined term, no
+  citation, no forward reference. idnits enforces parts of this mechanically
+  (no citations in the abstract; self-contained).
+- **Everywhere else the same rule is definition-before-use.** A chapter order
+  where no chapter needs a term or mechanism a later chapter introduces is this
+  rule applied at chapter scale.
+- **Test:** hand the abstract alone to a reader with no access to the document.
+  Every word must already mean what it says. Any capitalized term that needs
+  the Terminology section fails the test.
+- ⚠ **Corollary for summarize-then-expand ("pyramid") authoring: the abstract
+  is the top pyramid layer TRANSLATED into pre-document vocabulary, not
+  copied.** The top layer is necessarily written in the document's terms —
+  it summarizes the document. Position zero has none of them. The translation
+  step is separate work and skipping it is exactly how the first abstract
+  failed.
