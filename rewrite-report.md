@@ -1,207 +1,269 @@
-# Rewrite report — draft-dogru-scitt-disclosure-evidence-07, rules-transfer iteration 3 (REWRITE arm)
+# Rewrite report — draft-dogru-scitt-disclosure-evidence-04
 
-Inputs: `source.txt` (-07) and `rules-snapshot.md` (§1–§27 + claudisms). Register-only rewrite; no
-structural work performed. Output: `rewritten.md`.
+Source: `draft-dogru-scitt-disclosure-evidence-04.txt` (plain-text I-D, page furniture stripped).
+Output: `draft-rewritten.md`.
+Rules: `rewrite-rules-wip.md`.
+Scope: Abstract and Sections 1-9. RFC boilerplate, TOC and Section 10 skipped.
 
-## 1. §11 compliance — checked, not promised
+## 0. Headline numbers
 
-- BCP 14 sentence check (line-wrap and whitespace normalized, nothing else): **45 keyword-bearing
-  sentences in the source, 45 in the rewrite, 0 differ**. Unchanged and verifiable, not "carefully
-  preserved". (Checker run in-session; the boilerplate BCP 14 key-words paragraph is additionally
-  kept verbatim inside frozen Section 2.)
-- §11.4 named sections frozen whole and verified identical after normalization:
-  **Section 2 (Conventions and Definitions)** and **Section 4.7 (Semantics of the outcomes)**.
-- Section order and numbering: unchanged, 1–10 plus subsections, ToC reproduced without page numbers.
-- Page furniture dropped: running headers/footers, page breaks, dot leaders.
-- Also kept verbatim: Status of This Memo, Copyright Notice (fixed IETF boilerplate), References,
-  both IANA registration templates and registry tables (reformatted as markdown lists/tables, text
-  unchanged), Author's Address.
-
-## 2. Self-measured texture (counted by script, same method on both files)
-
-| | source.txt | rewritten.md |
+| | original | rewritten |
 |---|---|---|
-| prose sentences (body before References; headings/tables/ToC excluded) | 643 | **559** |
-| median sentence | 10 | **12** |
-| mean | 12.7 | 14.0 |
-| longest | 159 (splitter artifact over a field list; real longest is a frozen 4.6 sentence) | 52 (same artifact class) |
-| over 25 words | 51 (7.9%) | **33 (5.9%)** |
-| ... of which BCP14-bearing (frozen) | 20 | 20 |
-| connective-bearing, §12.1 broad word list | 96 (14.9%) | 92 (16.5%) |
-| connective-bearing, narrow discourse list (because/therefore/but/however/although/instead/rather than/also/...) | 28 (4.4%) | **26 (4.7%)** |
-| narrow share, non-normative sentences only | 3.5% | **3.7%** |
+| words (Abstract + §1-9) | 5,765 | 6,465 (+12.1%) |
+| sentences over 25 words | 42 | **1** (BCP 14 boilerplate, kept verbatim — see §2) |
+| paragraphs over 6 sentences | — | 0 |
+| RFC 2119 keyword instances | bare MUST 16, MUST NOT 23, SHOULD 2, SHOULD NOT 1, MAY 4, SHALL 1, SHALL NOT 1, REQUIRED 1, RECOMMENDED 3, OPTIONAL 1 | identical in both texts, all ten classes (counts are of the *bare* keyword, i.e. MUST excludes MUST NOT) |
 
-Reading of the numbers, per §3.3 self-normalisation: the §26 target ("connective share in single
-digit percent") is met on the discourse-connective list (4.7%, and 3.7% in the prose I could touch),
-and the rewrite sits within 0.3 points of the source's own register — the register the reviewer
-accepted. The broad §12.1 list lands at 16.5% because it counts if/where/when/unless, which are the
-condition words of the normative sentences themselves; 20 of the 33 over-25 sentences are frozen
-BCP 14 text, and the remaining 13 are IETF boilerplate (3), frozen Section 2 definitions (2), one
-frozen 4.7 sentence, and field-label/enumeration splitter artifacts (value-format lists, outcome
-enumerations). Zero over-25 sentences remain in prose that was mine to edit and is not an
-enumeration.
+Keyword parity was checked mechanically over §1-9 of both texts.
 
-Counting method recorded per §7's warning: sentence split on `[.?!]` + space, over hard-wrap
-normalization; field-list labels merge into their following sentence, which inflates a handful of
-lengths in both files equally. The numbers are comparable to each other and to nothing else.
+## 1. Per-section table
 
-## 3. §25 — glossary and exemption ledger
+Word counts include the heading line. "Longest" is the longest sentence in words.
 
-### 3.1 Glossary (concept -> chosen word <- words it replaced)
+Measurement caveat: the original is plain text with hanging-indent definition
+lists and bullets, and the sentence splitter sometimes joins a heading or a list
+label to the sentence that follows it. Original "longest" figures marked † are
+inflated by a few words for that reason; the ranking is still sound.
 
-- show <- reveal ("receipt chain does not reveal this"), surface, "differ in a way a digest does not reveal"
-- does not show <- "are silent about" (hash chains), "silent about what is missing"
-- bind / bound (verb) <- pin / pinned ("digest that pins", "visible and pinned") — except inside frozen text, see ledger
-- state <- testify ("the set then testifies to its own extent")
-- count(ers) of activity <- "account of activity" / "second account" (coined noun in source §1)
-- remove <- "make ... disappear" (4.1)
-- population <- account ("either account", intro bullet)
-- rewrite after the fact <- "quietly rewrite" (Section 5)
-- avoid <- "route around" (Section 6)
-- detectable <- "becomes detectable, rather than invisible" (4.1, complement dropped)
+| § | orig words | new words | orig longest | new longest |
+|---|---|---|---|---|
+| Abstract | 185 | 274 | 51 | 22 |
+| 1 Introduction | 413 | 491 | 48† | 24 |
+| 1.1 What these structures do not claim | 130 | 159 | 35 | 23 |
+| 2 Conventions and Definitions | 263 | 275 | 49 | 48 (boilerplate) |
+| 3 Transformation Evidence (heading) | 3 | 3 | 2 | 2 |
+| 3.1 Purpose | 44 | 50 | 23† | 23 |
+| 3.2 Structure | 218 | 248 | 28 | 22 |
+| 3.3 Serialization and digests | 87 | 93 | 29 | 20 |
+| 3.4 What Transformation Evidence does not prove | 281 | 318 | 39 | 25 |
+| 4 Coverage Reconciliation (heading) | 3 | 3 | 2 | 2 |
+| 4.1 Purpose | 82 | 95 | 27 | 22 |
+| 4.2 Activity snapshots | 145 | 165 | 21† | 23 |
+| 4.3 Reconciliation procedure | 903 | 995 | 45 | 25 |
+| 4.4 Mapping profiles | 588 | 640 | 41 | 24 |
+| 4.5 Exclusions | 317 | 353 | 38 | 25 |
+| 4.6 Result statement | 431 | 461 | 53 | 24 |
+| 4.7 Semantics of the outcomes | 361 | 417 | 45 | 25 |
+| 5 Registration on a Transparency Service | 153 | 172 | 56 | 22† |
+| 6 Security Considerations | 388 | 419 | 39 | 25 |
+| 7 Privacy Considerations | 102 | 112 | 50 | 22† |
+| 8 IANA Considerations | 37 | 37 | 29† | 17† |
+| 9 Implementation Status | 631 | 681 | 87 | 25 |
+| **total** | **5,765** | **6,465** | 87 | 48 (25 excl. boilerplate) |
 
-### 3.2 Exemption ledger (kept words neither plain nor on the exemption list; one line each)
+§4.2 is the one section whose longest sentence grew (21 → 23). The original 21
+was an artefact of the splitter (heading + label). The genuine new maximum there
+is the `source` member gloss, at 23 words, and it is under the cap.
 
-The exemption list per §25: the document's Terminology section (Section 2 terms), registry values
-(five actions; six outcomes; no-exceptions/exceptions), standard names (SCITT, JSON, JCS, CBOR,
-COSE, SHA-256, Ed25519, ISO 8601, RFC/I-D anchors, PostgreSQL, npm, TypeScript, IANA), and BCP 14
-keywords.
+## 2. Original wording kept deliberately
 
-1. **standing** — the source's one word for a bound's provenance (protocol-defined/measured/
-   operator-declared/undeclared); locked in by frozen 4.4/4.6 text; kept as the single word.
-2. **bound (noun)** — multiplicity/skew bound; defined inside the frozen Mapping Profile entry.
-3. **accusation** — kept for one-word-per-concept consistency with the frozen 4.4 sentence
-   ("the false accusation this document now guards against").
-4. **overclaim** — locked in by the frozen 4.6 counts sentence; used once in my prose (4.4).
-5. **bare pass** — source's term for an unqualified verdict; locked in by frozen 4.7; at its one
-   use in my prose (1.2) it is defined by the colon that follows it.
-6. **bypass / bypassed** — outcome semantics term (frozen 4.7 "Gateway bypass").
-7. **skew / multiplicity** — clocks.skew field name; Mapping Profile definition vocabulary.
-8. **snapshot** — structure name (activity-snapshot/1) and Window definition vocabulary.
-9. **sealed** (6.1, "sealed total", "sealed quantity") — specialist sense (signed over a completed
-   set); no one-word plain substitute; meaning carried by the surrounding sentences.
-10. **trust statement** (3.4) — source's phrase for the dependency set of the claim; one use.
-11. **self-attested** (3.4) — technical compound, standard usage.
-12. **housekeeping** (4.5) — deployment jargon for session/catalog maintenance activity; the source
-    defines it by example in the same sentence.
-13. **pooler / object-relational mapper** (4.4) — component names.
-14. **green dashboard** (Acknowledgments) — dedication metaphor, kept as courtesy per rules §4.5.
-15. **"For digesting and signing"** (3.3, 8.1, 8.2) — gerund phrase kept: fixed formula shared with
-    the IANA templates; rewriting it in one place would fork the wording.
+| kept text | reason |
+|---|---|
+| The whole BCP 14 paragraph in §2 ("The key words "MUST", "MUST NOT", … as shown here.") — 45 words, one sentence | Required boilerplate. RFC 8174 fixes this wording; editing it changes the normative binding of every keyword in the document. This is the only remaining sentence over 25 words. |
+| The five outcome names `matched`, `observed-without-receipt`, `receipted-without-observation`, `excluded`, `indeterminate` | Defined terms. Constraint. The Abstract of the reference rewrite glosses them in plain words; I kept the real names and added a plain-word gloss around them instead. |
+| `invalid-window`, `no-exceptions`, `exceptions`, `covered`, `mask`, `redact`, `tokenize`, `truncate`, `none`, `protocol-defined`, `measured`, `operator-declared`, `undeclared` | Wire values and outcome names. |
+| All member names (`v`, `disclosure`, `request`, `policy`, `classes`, `class`, `action`, `count`, `ts`, `source`, `entries`, `pattern`, `window`, `snapshots`, `receipts`, `profile`, `bounds`, `outcome`, `items`, `counts`) | Wire names. In particular the snapshot member `source` and the result member `source` keep their names even though "source" is otherwise avoided as a synonym for origin (rules §4.3). |
+| Version strings `transformation-evidence/1`, `activity-snapshot/1`, `coverage-reconciliation/1`, `coverage-reconciliation/2` | Wire values. |
+| "A coverage outcome computed against a declared correspondence cannot be stronger than the declaration." (§4.4) | This is the document's own italicised statement of its central limit. "Stronger" is a specialist sense (see §3 below) and I glossed it in the surrounding sentences and in the Abstract, but the sentence itself is a load-bearing formulation the working group is likely to quote. Kept verbatim, with plain-language support around it. |
+| "the absence of a decision is not a decision" → rendered as "A missing decision is not a decision." | Near-verbatim. Any longer paraphrase weakened the MUST NOT it justifies. |
+| "It MUST NOT be presented as either" (§1.1) and "It MUST be read that way" (§3.4) — kept passive | The originals are agentless passives ("MUST NOT be presented as", "MUST be read that way"). Naming a subject (consumers? readers? verifiers?) would invent a normative addressee the source does not name, which is a bigger error than a passive. Same for "a result MUST NOT be stated in terms that assert that" (§4.3) and "It MUST NOT be resolved by assumption" (§4.7). Four passives retained on this ground. |
+| "Snapshot frequency bounds the exposure" (§6) | "Bounds" here is the document's own technical verb, used consistently. Replacing it with "limits" would split one concept across two words. |
+| "indeterminate here is not a weaker pass" (§4.3) and "An indeterminate outcome is a result, and not a degraded pass" (§4.7) — both contrast pairs retained | Rules §2 flags "X, not Y" as a tic. These two are earned: the preceding text does propose the reading being denied, and both sentences are the stated rationale for a MUST NOT. Cutting the contrast would remove the reason for the requirement. |
+| "not merely that its values are hidden" (§3.4) and "and not per call count" (§4.3) — contrast pairs retained | Same ground: each denies a reading the surrounding normative rule exists to prevent. |
+| `[RFC9943]`, `[RFC2119]`, `[RFC8174]`, `[RFC8785]`, `[RFC9052]`, `[RFC7942]` | References unchanged. |
+| Version numbers 0.2.21 / 0.2.22 / 0.2.23 / 0.2.27 / 0.2.28, "three seconds", "two-hour Window", "twenty-three hour", "July 2026", "@conarium-ai/core", "-03" | Facts. Unchanged. |
 
-Ledger size: **15 entries.**
+## 3. Specialist-sense phrases unpacked
 
-## 4. Per-rule log
+Rules §4.4: short sentences of common words in specialist senses pass every
+mechanical check and are still unreadable. These are the ones I found and opened
+up.
 
-- **§1.1 mechanical**: all remaining over-25 sentences are frozen, boilerplate, or enumeration
-  artifacts (see §2 above). Active voice restored where the agent exists ("Window validity is
-  checked first" -> "The reconciler checks Window validity first"; "A Mapping Profile is therefore
-  declared by the operator" -> "The operator therefore declares the Mapping Profile"). Gerund-noun
-  removals: "detecting the cut needs" (1.1), "Accepting an unknown prefix ... would let" (6),
-  "renumbering them ... would break" (9), "neither was found by reading this document" (9),
-  "He proposed applying" (Acks), "What the implementation is forbidden to do is state" (4.3).
-- **§2 claudisms**: cut or repaired — "The essential property is that" (significance designation,
-  4.1); "This layering is deliberate." (self-grading, 5); "the asymmetry is deliberate" (4.6);
-  "The failure is more instructive than the current state." (self-grading, 9); "Two limits, stated
-  rather than left to be found." (colon-staged intro, 9); "Neither layer rescues the other. One
-  artefact answers half of a two-part question." (aphoristic closer restating the paragraph, 1.3);
-  "This subsection states the bound so a reader meets it before the procedure." (structure
-  narration, 1.1 — deleted whole per the delete-never-trim rule; the Section 6 pointer stays);
-  merged several negation-first pairs where unearned ("The multiplicity is not a property of the
-  Gateway. It is a property of the deployment." -> one sentence). Kept "X, not Y" contrasts that
-  exclude a real alternative (§18 test): payload-not-envelope (5), declared-not-measured, error-not-
-  default (4.4).
-- **§9 forward dependencies**: the source already carries the -04 fixes (1.1 exists for this; 4.3
-  points at 4.4/4.7/6). No pointer removed; none needed adding. One new finding recorded in §5 below
-  (Section 9 dependency).
-- **§10**: no terms coined.
-- **§12 + §26**: relations conserved by order, colon, and noun echo; see §6 below for the three
-  sites where §26 changed the output. No connective word added anywhere in the rewrite; splits at
-  colons/semicolons only. The commissioned-because relation lost in the published -07 (rules §12's
-  own worked pair) restored via "That review was commissioned for two reasons: ..." — noun echo +
-  colon, zero discourse connectives, both sentences under the cap.
-- **§14**: abstract rewritten to position-zero vocabulary: outcome names replaced by "one of five
-  outcomes", "not a bare pass" replaced by "an undecided item stays undecided in the result";
-  citation-free; the two payload names kept (they are the document's deliverables, not Terminology
-  entries).
-- **§15**: the four receipt-format citations attached at the claim "Several receipt formats exist"
-  (Section 1, paragraph 1) — the rules' own worked example; the related-work paragraph keeps its
-  discussion and its citations.
-- **§16 + §18**: "They share a limit" now carries its criterion and a non-tautological claim:
-  "They share one limit: the party under audit selects the evidence." (the §18-approved real claim;
-  the property sentence follows as support).
-- **§17** (hard form): deleted — "This document defines no new receipt format, transparency
-  mechanism, or signature format." (Abstract); "This document does not reinvent that. This document
-  defines no new receipt format, no policy evaluation semantics, and no transparency mechanism."
-  (1) — replaced by the rules' accepted positive form ("payloads for registration ... whose
-  append-only log a third party can audit"); "This document defines no countersignature, no
-  anchoring, and no log format of its own." (5); "No evidence structure substitutes for that."
-  (3.4, counterfactual restatement, §20 sub-case); "rather than invisible" (4.1, complement
-  restatement); "The size is not an assertion." (4.6, restatement). Kept: security-consideration
-  negatives that bound what the EVIDENCE means ("does not defend against that operator", "It does
-  not establish that...", frozen), and Section 1.2/3.4 does-not-claim sentences that name their
-  criterion (per §16) — these limit evidence meaning and several are frozen.
-- **§19**: the two problem statements in Section 1 kept to name/mechanism/consequence; duplicate
-  restatements removed (see §17 list).
-- **§20 ASCII**: every em dash in rewritable prose replaced by role (colon, comma pair, or period).
-  `grep -nP '[^\x00-\x7F]'` residue: author-name letters (Doğru, TEKNOLOJİ, ŞİRKETİ, Türkiye) and
-  em dashes inside frozen text only (Section 2 definitions x2, the frozen 4.4 MUST NOT sentence) —
-  §11 outranks §20 there; flagged as author work.
-- **§21**: found and left frozen: "An implementation encountering a value in a field defined here
-  MUST reject the structure." (3.2) — the receiver holds nothing that decides "this string is a
-  value"; the rules' own example. Recorded for the author (repair options a/b/c per §21).
-- **§22**: found and left frozen: "The absence of a class ... MUST be read that way." (3.4) — the
-  enumerated form (two worlds: no values occurred, or the policy does not define the class) plus a
-  decidable presentation rule is recorded for the author; the freeze keeps the defect visible.
-- **§23**: "A silently ignored fourth field ... The gap shows up as an outcome the operator cannot
-  account for." — W2 deleted, W1 kept attached after the frozen MUST sentence (the colon-attach
-  form was unavailable because the rule sentence is frozen). The declared-zero/assumed-zero
-  sentence kept as the source already has it in the one-sentence form §23 endorses.
-- **§24**: "It therefore needs the tightest reporting rules of the five." (4.5) -> "The rules below
-  therefore make each exclusion visible in the result." (the rules' accepted fix). "This layering
-  is deliberate" and "the asymmetry is deliberate" deleted; the properties they graded are stated
-  by the sentences that follow. "first-class" dropped from 3.1.
-- **§25/§26**: see §3 above and §6 below.
-- **§27**: NOT applied — pyramid re-authoring is author work and this run is register-only per the
-  task brief; the source outline is kept 1:1.
+| before (source) | after (rewrite) |
+|---|---|
+| "it does not report a bare pass" (Abstract); "Neither structure reports a bare pass" (§1.1); "distinguishes this vocabulary from a bare pass" (§4.7) | "The result does not report a plain "pass" and nothing else. It always reports the five counts." / "Neither structure reports a plain "pass" and nothing else." / "separates this set of outcome names from a plain "pass"" |
+| "cannot yield an outcome stronger than that declaration" (§1.1) | "Its outcome carries no more weight than that declaration." (In §4.4 the formulation itself is kept — see §2 — but is introduced by "The consequence is an upper limit.") |
+| "an outcome of that standing, no stronger" (§4.6) | "states an outcome of that standing, and no stronger" — with "standing" itself unpacked at first use in §4.4: "the outcome takes that standing, and the result statement is required to show it." |
+| "the disclosure surface" (§1.1, §3.4) | "what one Disclosure exposes" / "what one result exposes" |
+| "it does not claim a value is unlearnable"; "a class be unlearnable rather than hidden" (§1.1, §3.4) | "It does not claim that a client cannot learn a value." / "a class stays beyond the client's reach, and not merely that its values are hidden" |
+| "left the gateway transformed or in the clear" (§1) | "left the gateway transformed or unchanged" |
+| "predicates over protected columns" (§3.4) | "tests on protected columns" |
+| "the pinned Issuer asserted" (§3.4) | "the named Issuer asserted" |
+| "that assertion is self-attested" (§3.4) | "the assertion is about the asserting party's own work" |
+| "pinned identically and verify identically"; "a pinned exclusion as a justified one"; "the digest that is supposed to pin what was compared" (§4.5) | "The digest covers both in the same way, and both verify in the same way." / "MUST NOT read an exclusion as justified because the digest covers it" / "The digest is supposed to fix what the comparison covered." Also "the requirement is … that they be visible and pinned" → "that each exclusion is visible and that the digest covers it". |
+| "all produce the same shape as a receipt describing activity that did not occur" (§4.7) | "produce the same shape in the result as a receipt that describes activity that never occurred" — with the follow-up "because the shape of the result does not distinguish the cases", so "shape" is anchored to the result object rather than left floating. |
+| "a boundary artefact cannot exceed the interval it bounds" (§4.4) | "an artefact of the boundary cannot exceed the interval the boundary marks" |
+| "a Gateway clock trailing the Data Source" (§4.3, twice) | "the Gateway clock runs behind the Data Source clock" / "a Gateway clock that runs behind the Data Source" |
+| "the outcome whose semantics name gateway bypass" (§4.3) | "the outcome whose meaning names gateway bypass" |
+| "the source's accounting" / "the Data Source's own accounting" (throughout) | "the Data Source's account" / "the Data Source's own account", to avoid "accounting" as a gerund-noun and to keep "source" from drifting toward "origin" |
+| "this vocabulary" used for the set of five outcome names (§4.6, §4.7) | "this set of outcome names" |
+| "the mirror condition" (§4.7) | "the condition on the other side" |
+| "one layer up" (§4.4) | kept, but re-anchored: "Section 4.7 applies the same discipline to missing evidence. The rule here is that same discipline, one layer up." |
+| "the essential property" (§4.1) | kept — it is not significance designation in the rules §2 sense; it names the property the section's whole argument rests on and the next two sentences state it. |
+| "Establishing completeness requires…" (§1) — gerund subject | "Completeness therefore needs a second account of the activity" |
+| "Matching is per pattern and per data object" (§4.3) — gerund subject | "The reconciler matches per pattern and per data object." |
+| "Admitting Receipts on an exact comparison…" (§4.3) — gerund subject | "A reconciler could admit Receipts on an exact comparison between the two timestamps." |
+| "Attributing cause is investigation, not reconciliation" (§4.7) — gerund subject | "To attribute a cause is investigation work, and reconciliation does not do it." |
+| "This layering is deliberate" (§5) — gerund subject | "This document layers the two parts deliberately." |
+| "the gaps are stated here rather than left for a reader to discover" (§9) | "The gaps appear here, rather than waiting for a reader to discover them." |
 
-## 5. Recorded as author work (not done)
+Claudisms cut (rules §2): the em-dash count drops from 18 in the source body to 0 in
+the rewritten body (one remains in the file's own subtitle line); each em-dash aside became its own sentence. Two "precisely"
+intensifiers ("precisely the part", "precisely that it surfaces") were removed or
+replaced with plain statements; one "exactly" was kept in §4.6 ("restores exactly
+the overclaim") because it modifies an identity claim, not an intensity.
 
-1. **§21 unenforceable MUST** (3.2): trigger condition undecidable by the receiver. Options:
-   (a) supply the checks that exist (member not in defined set, wrong type, class not in policy
-   list); (b) re-address to the producer; (c) demote to the definition sentence that already
-   carries it.
-2. **§22 enumeration** (3.4): replace "MUST be read that way" with the two named worlds plus a
-   presentation rule ("A Consumer MUST NOT present the absence of a class as evidence that no
-   values of that class were disclosed"); strength ledger MUST -> MUST NOT if adopted.
-3. **§13.7 dependency on Section 9**: Section 4.3 cites "The measured case was three seconds
-   (Section 9)" and 4.4 cites "The twenty-three hour case ... is in Section 9" — load-bearing
-   motivation living in a section the draft says will be removed. Promote the two cases (or their
-   numbers) into 4.3/4.4, or lose them knowingly.
-4. **Spelling fork artifact/artefact**: both appear, each at least once in frozen text ("signed
-   artifact" 3.1/6; "boundary artefact" in the frozen 4.4 MAY sentence). Normalization requires
-   touching normative text; author's call.
-5. **Ambiguous referent** (Section 9): "What made the second sentence sayable was the tool's own
-   output." — "the second sentence" has no clear antecedent; kept as "made the second sentence
-   sayable" pending the author naming it.
-6. **Em dashes inside frozen text** (§20 conflict, see §4): three sites, author-side fix.
-7. **Structural suggestions not taken** (register-only run): worked JSON examples for both payloads;
-   §27 pyramid re-derivation of chapter order.
+## 4. Ambiguities in the source
 
-## 6. The three places §26 changed the outcome (vs. what §12 alone would have produced)
+1. **§4.3, "the item takes the outcome it would have had".** Would have had
+   *under what counterfactual* — without the skew bound, or without the Receipt
+   in question? I rendered it "the outcome it would otherwise have had", which
+   preserves the ambiguity rather than resolving it. An editor should pin this
+   down; it decides an implementation's behaviour.
 
-1. **Section 9, the commissioned-review pair.** §12 alone restores two "because" sentences (the
-   rules' §12 compliant example does exactly that). Written instead as noun echo + colon: "The
-   second came from an adversarial review of the implementation. That review was commissioned for
-   two reasons: the fix had loosened a default, and its author was not the party who should clear
-   it." Relation conserved, zero discourse connectives added.
-2. **Section 4.4, the ceiling paragraph.** The draft's "The consequence is a ceiling." staging (and
-   the tempting "Therefore, ...") both dropped: the sentence "A coverage outcome against a declared
-   correspondence cannot be stronger than the declaration." now sits directly after the MUST-state
-   rule — order alone carries the inference, and the metaphor "ceiling" fell out of the vocabulary
-   with it.
-3. **Section 4.3, no-floor and membership.** "Window membership is itself a bound: it is decided
-   across two clocks." and "The procedure sets no floor: a smaller offset is harder for a reader to
-   suspect." — both would naturally have taken "because"; the colon form carries the reason. Same
-   move deleted "In particular," before the undeclared-multiplicity sentence: adjacency to the
-   frozen MUST NOT sentence already scopes it.
+2. **§4.3, "no pattern's counter may be lower at the end than at the start".**
+   Lowercase "may", inside a paragraph of uppercase MUSTs. I preserved the
+   lowercase, so it is not an RFC 2119 keyword. If the author meant MUST NOT be
+   lower, the rewrite does not say so — deliberately, since I may not change
+   normative force.
+
+3. **§4.4, "the expected bounded set of source-level patterns".** "Bounded"
+   could qualify the set (finite, enumerated in the profile) or the multiplicity
+   that follows. I read it as the set and wrote "the expected set of source-level
+   patterns, and that set is bounded". If the author meant the multiplicity, the
+   sentence is now slightly wrong in emphasis, though the next sentence states
+   the multiplicity bound separately either way.
+
+4. **§9, "What made the second sentence sayable was the tool's own output".**
+   "The second sentence" has no clear antecedent in the source. Most likely it
+   means the sentence in this section describing the second defect. I wrote "The
+   tool's own output is what made the second of those sentences sayable", which
+   keeps the same referent problem rather than inventing a resolution.
+
+5. **§9, "The temporal rule in this revision has the same history, compressed."**
+   "Compressed" could mean the history happened over a shorter period, or that
+   the account of it here is shorter. I chose "over a shorter period". This is a
+   guess; see §5 item 4.
+
+6. **§4.6, `outcome` / `bounds` ordering.** The source says a result whose bounds
+   are operator-declared "states an outcome of that standing, no stronger", but
+   `outcome` is a closed vocabulary of three values with no standing marker. The
+   standing evidently lives in `bounds`, not in `outcome`. The source does not
+   say this and neither does the rewrite; I flag it as an editorial gap, not a
+   rewrite decision.
+
+7. **§4.7, "an accounting scope mismatch".** Named as a cause of
+   `observed-without-receipt`, but §4.2 says a `source` mismatch between the two
+   snapshots invalidates the Window. Whether these are the same condition is not
+   stated. I kept both statements as they are and did not harmonise them.
+
+## 5. Places where I may have changed meaning — be paranoid here
+
+Listed worst-first. Nothing here is a change I intend; these are the spots where
+I am less than certain.
+
+1. **§1.1 / Abstract, "a bare pass" → "a plain "pass" and nothing else".**
+   The unpack asserts that the objection is to *reporting only a pass*. An
+   alternative reading of "bare pass" is a pass *unqualified by its standing*
+   (i.e. one that hides that its bounds are operator-declared). §4.7's "destroys
+   the only property that distinguishes this vocabulary from a bare pass"
+   supports my reading; §4.4's ceiling argument supports the other. The rewrite
+   carries the first reading in three places. **Highest-risk item in the
+   document.**
+
+2. **§4.3, counter regression.** Source: "the reconciler MUST report failure for
+   the Window as a whole rather than reconciling the surviving patterns." I
+   wrote "MUST report failure for the Window as a whole, instead of reconciling
+   the patterns that survived." I deliberately did *not* split this into a
+   separate "It MUST NOT reconcile the surviving patterns", because that would
+   mint a normative requirement the source does not state as one. But "instead
+   of" is weaker-sounding than the original's "rather than", and a reader may
+   now take the second clause as advisory. Consider whether the author intended
+   a MUST NOT there.
+
+3. **§3.3, "instead of guessing which form the digest has".** Source: "MUST
+   reject … rather than guessing". Same shape as item 2 — the "rather than"
+   clause is arguably part of the requirement. I kept it inside the same
+   sentence so it stays attached to the MUST.
+
+4. **§9, "over a shorter period"** for "compressed" (see §4 item 5). If the
+   author meant "told here in compressed form", my version asserts a fact about
+   the timeline that the source does not.
+
+5. **§4.4, "This document layers the two parts deliberately"** (§5) and
+   **"The consequence is an upper limit"** (§4.4). Both replace a nominal
+   subject with a real one, per rules §2 (abstraction agency). In §4.4 the
+   source says "The consequence is a ceiling"; "upper limit" and "ceiling" are
+   the same idea, but "ceiling" may be terminology the working group has already
+   adopted. Consider restoring "ceiling" if so.
+
+6. **§4.1, "A Gateway does not produce the Data Source's account, so it cannot
+   make activity that went around it disappear from that account."** The source
+   is "A Gateway cannot make bypassed activity disappear from an account it does
+   not produce." I made the causal link explicit ("so"). The source states it as
+   a single fact and leaves the causality implicit. I believe this is the
+   intended reading, but it is an addition of logical structure.
+
+7. **§1, "Completeness therefore needs a second account of the activity, and a
+   party other than the gateway must produce that account: the Data Source
+   itself."** Lowercase "must" here is mine; the source has "requires … produced
+   by a party other than the gateway". Lowercase "must" is not an RFC 2119
+   keyword and §2's boilerplate says so explicitly, so this should be safe. Flag
+   it anyway: an author may prefer "has to" to keep even the lowercase form out
+   of a requirements-shaped sentence.
+
+8. **§4.5, "A party decides excluded before the comparison."** The source has
+   "excluded is a decision taken before it". I supplied "A party" as the actor
+   because the passive had no subject. "A party" is vague on purpose — the
+   deciding actor is really whoever wrote the Mapping Profile, i.e. the
+   operator, but the source does not say so at this point in the text and §4.4
+   does. If the author is willing, "the operator" would be clearer and is
+   probably what is meant.
+
+9. **§4.3, "In the case where someone found this problem, the measured
+   difference was three seconds."** Source: "The difference measured where this
+   was found was three seconds." "Someone" is a placeholder for an unnamed
+   finder. §9 identifies the finder as review of -03 on the SCITT mailing list,
+   so the fact is available, but §4.3 does not state it and neither does my
+   rewrite.
+
+10. **§9, "The codes stay unchanged on purpose."** Source: "They were left
+    unchanged deliberately." I avoided naming an actor. Elsewhere in the same
+    bullet I did write "The implementation added one code" for "One code was
+    added" — that names the implementation rather than its authors. Both are
+    small agency additions to agentless passives.
+
+11. **§4.6, `profile` member: "The member is null when nobody declared a
+    profile."** Source: "or null when none was declared". "Nobody declared" is a
+    small strengthening — the source allows "none was declared *to this
+    reconciler*". Low risk, but noted.
+
+12. **§7, "The cost is that a third-party audit then needs permission and is no
+    longer a public act."** Source: "at the cost of making third-party audit a
+    permissioned rather than public act." I split the contrast into two clauses.
+    The source's "permissioned rather than public" is a single term of art in
+    some access-control writing; if it is one here, the split loses it.
+
+13. **§3.4, "A result count of one rather than zero gives the client one bit of
+    the value."** Source: "(a result-count of one versus zero is one bit of the
+    value)". The source states an identity ("is one bit"); mine states a
+    transfer ("gives the client one bit"). In context — a paragraph about what
+    the client can learn — I believe these are the same claim. But it is an
+    interpretation, not a transcription.
+
+14. **Paragraph splitting.** To meet the ≤6-sentences-per-paragraph rule I broke
+    26 paragraphs into two or three. Every break falls on a sentence boundary
+    and none reorders text, but a paragraph break is itself a rhetorical signal.
+    A few breaks — notably inside §4.3's two-clock argument, §4.5's discussion
+    of what the digest achieves, and §4.7's list of causes — separate a claim
+    from its immediate justification. An editor should re-read those three
+    passages and rejoin any break that reads as a topic change when it is not.
+
+15. **The Abstract deviates from the hand-written reference abstract used as a
+    style model, in one respect.** That reference glosses the five outcomes in plain words ("observed with
+    no receipt", "receipted with no observation", "excluded before the
+    comparison"). The task constraints forbid changing outcome names, so my
+    Abstract uses the real hyphenated names. This makes the Abstract slightly
+    harder than the reference. If the reference register is to win here, the
+    names would have to appear as a gloss alongside the plain wording. Flagging
+    it because it is a deliberate divergence from the model text.
