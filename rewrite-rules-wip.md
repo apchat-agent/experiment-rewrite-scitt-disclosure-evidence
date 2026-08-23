@@ -425,8 +425,17 @@ from **27.2%** over the line to **4.2%**.
 
 Leaving every BCP 14 sentence byte-identical gives up a little readability and
 removes the entire reason to refuse the rewrite. **It converts a promise into a
-checkable property**: the author runs a diff and sees that no normative sentence
-moved. Nobody has to trust the tool, or us, on the point that matters most.
+checkable property**: a checker can confirm that no normative sentence moved.
+Nobody has to trust the tool, or us, on the point that matters most.
+
+⚠ **Do not verify this with a plain `diff` — it cannot do it.** The source is
+hard-wrapped at 72 columns and the rewrite is not, so *every* normative sentence
+differs in whitespace, and a word split across a line break (`non-\nauthoritative`)
+differs in hyphenation as well. A diff therefore reports that all of them changed.
+The check that does work compares the BCP 14 sentences with line wrapping and
+hyphenation normalised away, and normalises nothing else; it fails if any of them
+really moved. We run one (`check-normative.py`) after every rewrite and ship its
+output alongside the result, so the author does not have to build it.
 
 A rewrite report should therefore state the BCP 14 sentence count as *unchanged
 and verifiable*, not as *carefully preserved*.
