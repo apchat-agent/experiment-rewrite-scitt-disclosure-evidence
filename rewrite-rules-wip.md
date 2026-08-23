@@ -1066,3 +1066,44 @@ present the absence of a class as evidence that no values of that class were
 disclosed"), and the strength ledger records MUST -> MUST NOT as part of the
 divergence, since the source's vague MUST had no presentation-rule form to
 keep.
+
+## 23. A rule earns one reason, attached (added 2026-08-24 00:2x, from the clocks passage)
+
+Six sentences said: exactly three keys, reject and name an unknown one; the
+same-clock case still declares all three, skew literally `0ms`. The reviewer:
+"looks a lot of prose". The extra bulk was rationale that had come loose —
+free-standing why-sentences after the rule, each deriving from the previous
+one.
+
+The rule: **a normative rule may carry its rationale as ONE clause, attached
+to the rule it justifies** (after a colon, in the same sentence or bound to
+it). The second why-sentence must state a NEW fact or die; a consequence of a
+consequence ("the difference appears later as an outcome that the operator
+cannot explain") is where rationale becomes narrative. This is §19's
+discipline pointed at rationale: R (the rule) plus at most one attached W
+(why); a W2 derived from W1 adds nothing the reader cannot derive too.
+
+Test: between a rule and the next rule or fact, count the why-sentences. More
+than one: keep the one with the fact, attach it, delete the chain.
+
+The example pair, verbatim:
+
+- **What not to do:**
+  > An implementation MUST reject a `clocks` member that carries any key other
+  > than these three, and SHOULD name the key that it rejected. A fourth field
+  > that is ignored without a report makes the declaration state less than its
+  > author believes. The difference appears later as an outcome that the
+  > operator cannot explain.
+
+- **What to do** (the accepted fix — one reason, attached; the derived
+  consequence deleted):
+  > An implementation MUST reject a `clocks` member that carries any key other
+  > than these three, and SHOULD name the key that it rejected: a field that
+  > is ignored without a report makes the declaration state less than its
+  > author believes.
+
+Companion move in the same passage: "A declared zero is a statement that one
+person is responsible for. An assumed zero is the condition that the rules
+below forbid." became one sentence — the distinction is load-bearing (it is
+the reason the no-default rules exist) and it survived; the aphoristic
+two-sentence staging did not.
