@@ -803,3 +803,22 @@ with a plain-language paraphrase, citation removed.
   it summarizes the document. Position zero has none of them. The translation
   step is separate work and skipping it is exactly how the first abstract
   failed.
+
+## 15. References live at the claim (added 2026-08-23 late, ayourtch's rule from a live review)
+
+"Several receipt formats exist." — stated in the introduction, uncited; the four
+receipt-format drafts were cited four paragraphs later, in the related-work
+discussion. The reader of the claim sentence had no pointer. The source document
+had the same separation; the re-authoring inherited it, and the reviewer caught
+it in the re-authoring.
+
+The rule, writing form: **a claim of existence, quantity, or prior art carries
+its references at the claim** — at first assertion, in the same sentence or the
+one beside it. The related-work section DISCUSSES the cited work; it is not the
+only place the pointer lives. This is §14's cousin and P2 (one rule, one home)
+applied to citations: the home of a reference is the claim it supports.
+
+Test, reviewing form: **read each empirical or existence claim alone. Can the
+reader reach the evidence from there, without searching the document?** A
+reference that exists somewhere else in the document does not pass; claim and
+evidence separated is a finding, even when both are present.
