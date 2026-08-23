@@ -934,3 +934,41 @@ positive did not already say. Scope of the rule: DESCRIPTIVE negatives.
 Normative MUST NOT sentences are conduct rules — obligations the document
 places on implementations — and are the document doing something, not prose
 about what it does not do.
+
+## 18. A claim must exclude an alternative (added 2026-08-23 late, from the tautology catch)
+
+"All of the formats share one limit: a receipt cannot attest what its producer
+did not record." — the reviewer: "kinda a tautology?" It is: unrecorded-is-
+unrecorded is true of every record ever made. The sentence wears the costume of
+a finding and carries no information.
+
+The rule: **a statement informs only if it excludes a possible alternative.**
+A real limit's negation describes a design that could exist. "The party under
+audit selects the evidence" is contentful because the alternative exists —
+evidence selected by a party other than the audited one (source-side counters,
+which is exactly what the document then builds). "A receipt cannot attest what
+its producer did not record" excludes nothing; no possible receipt attests the
+unrecorded.
+
+Test: ask the sentence "**what alternative does this exclude?**" If the answer
+is "nothing — the negation is impossible", the sentence is a tautology: find
+the real claim hiding under it (usually about an agent, a choice, or a
+mechanism) and state that instead. Cousin of §16: §16 catches a verdict with
+no criterion; this catches a claim with no content.
+
+## 19. A problem is three sentences (added 2026-08-23 late, from the same block)
+
+The two "problems" in the same introduction sprawled to seven sentences each —
+the reviewer: "property–problem–fluffysomething. How can they be made tighter?"
+
+The rule: **a problem statement earns exactly three jobs: NAME what fails,
+give the MECHANISM why, state the CONSEQUENCE it costs. One sentence per job
+is the target; a fact appears once.** Everything else in a problem block is
+either restatement (delete), an example (one at most, only if the mechanism
+sentence cannot carry it), or content that belongs to the chapter that solves
+the problem (move it).
+
+Test: label every sentence in the block N, M, or C. A sentence that takes no
+label, or repeats a label without adding a fact, dies. If a block needs two M
+sentences, the problem is probably two problems — split it and each gets its
+own N/M/C.
