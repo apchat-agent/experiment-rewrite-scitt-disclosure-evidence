@@ -1036,3 +1036,33 @@ Note the interaction with §11 (freeze normative sentences): when the
 unenforceable MUST is the SOURCE's, the re-authoring keeps it and the finding
 goes to the author as input for the next revision — the freeze preserves
 defects on purpose, so they stay visible and attributable.
+
+## 22. An ambiguity is enumerable — state the worlds, not the blur (added 2026-08-24 00:1x)
+
+"The absence of a class from the array is therefore a statement about the
+policy's list of classes as much as about the data. The absence MUST be read
+that way." — the reviewer's question was simply "What does this mean?", and
+that question is the finding. The sentence KNOWS the signal is ambiguous and
+describes the ambiguity abstractly ("about X as much as about Y"), leaving the
+reader to reconstruct the concrete cases alone.
+
+The rule: **when a signal cannot distinguish N situations, name the N
+situations.** An ambiguity is always enumerable — that is what makes it an
+ambiguity — so enumerate it: "A class can be absent for two reasons: no values
+of that class occurred in the result, or the policy does not define the
+class. The array does not distinguish the two." Abstract relativization
+("as much about X as about Y", "says more about A than B") is the blur-shaped
+description of an enumerable thing.
+
+Test: when a sentence asserts that a signal is ambiguous, relative, or
+partial, count the cases the text names. Fewer cases than worlds = the reader
+is doing the enumeration, and each reader will do it differently (the P4
+failure mode, at sentence scale).
+
+Composition note: the full repair of this paragraph used three rules at once —
+§22 for the two worlds, §21 for "MUST be read that way" (reading is not a
+checkable act; the decidable form is a presentation rule: "A Consumer MUST NOT
+present the absence of a class as evidence that no values of that class were
+disclosed"), and the strength ledger records MUST -> MUST NOT as part of the
+divergence, since the source's vague MUST had no presentation-rule form to
+keep.
