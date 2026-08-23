@@ -838,3 +838,37 @@ not to do'"):
   > [I-D.chueayen-attestation-receipts] [I-D.aylward-aiga-2].
   The related-work paragraph stays, and keeps the discussion (who uses
   Ed25519/JCS); it just no longer houses the only pointer.
+
+## 16. An evaluation names its criterion (added 2026-08-23 late, ayourtch's catch in the same live review)
+
+"All of the formats share one limit. A receipt is evidence from the party that
+performed the access, about an event that the same party chose to record." —
+the reviewer: "It claims something is a limit and then names a property?" The
+prose asserts a verdict (limit) and then states a neutral fact, and the step
+that makes the fact limiting — what the property PREVENTS — is left for the
+reader to derive.
+
+The rule: **an evaluative label (limit, problem, weakness, advantage, risk)
+must state its criterion in the same breath — what the labelled thing fails to
+provide, or provides.** A property is not a limit until the prose says what it
+is a limit ON. This is P3's mirror: P3 forbids caveats before the mechanism
+exists; this forbids verdicts before the consequence is stated.
+
+Test: ask the label "with respect to what?" If the adjacent sentences do not
+answer, the label is unearned — either state the consequence at the label or
+drop the label and let the property stand as a fact.
+
+The example pair, verbatim:
+
+- **What not to do:**
+  > All of the formats share one limit. A receipt is evidence from the party
+  > that performed the access, about an event that the same party chose to
+  > record.
+  ("Limit" asserted; the reader must infer what is limited.)
+
+- **What to do** (the accepted fix — consequence stated at the label):
+  > All of the formats share one limit: a receipt cannot attest what its
+  > producer did not record. A receipt is evidence from the party that
+  > performed the access, about an event that the same party chose to record.
+  The verdict now carries its criterion; the property that produces it
+  follows as support, and the two downstream problems elaborate it.
