@@ -16,8 +16,6 @@ To be explicit, because the point of the experiment is undermined otherwise:
   afternoon, and tested on real text as it went.
 - `rewrite-report.md` is **Claude's own account** of what it changed, what it
   refused to change, and the 15 places it believes it may have altered meaning.
-- Neither the draft's author nor anyone in the IETF has seen or reviewed any of
-  this.
 
 ## What this is
 
@@ -29,7 +27,7 @@ It is an experiment about **prose**, not about the specification's content. We
 picked this draft because it is *well made* —
 its Implementation Status section lists in detail what its implementation does
 *not* do, and it explicitly refuses to report a bare pass. Nothing here is a criticism of the
-work, and none of it has been sent to the author or to any IETF list.
+work.
 
 [draft]: https://datatracker.ietf.org/doc/draft-dogru-scitt-disclosure-evidence/
 
@@ -48,6 +46,7 @@ it is not the same problem as bad writing.
 | `draft-rewritten.md` | Abstract + §1–9 rewritten |
 | `rewrite-report.md` | what was kept, what was unpacked, and **15 places the rewrite may have changed meaning** |
 | `rewrite-rules-wip.md` | the rules used, the method, and eight traps we hit |
+| `forward-tensions.md` | 6 places the draft answers an objection **later** than the reader forms it |
 
 ## Result
 

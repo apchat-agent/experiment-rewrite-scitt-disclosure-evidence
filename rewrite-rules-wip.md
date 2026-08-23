@@ -283,3 +283,51 @@ specification whose readers are doing careful work in a second language.
 6. Check for **specialist senses of common words** (§4.4). This needs a human.
 7. Give it to **someone who has not read the source** (§4.8).
 8. Restore any **courtesy** the density pass removed (§4.5).
+
+## 9. Forward dependencies (added 2026-08-23, from a real reader's two trips)
+
+**The rule: avoid forward *dependencies*. Where the content cannot be moved
+earlier, name the dependency at the point where the reader forms the objection.**
+
+⚠ **This is NOT "avoid forward references" — that would delete the fix.** A
+forward *reference* ("the counter-reset case is treated in §6") is the cheap
+cure. A forward *dependency* is the disease: text whose meaning needs material
+the reader has not reached yet, left unsignposted, so the reader carries a
+false objection for pages.
+
+**Where this came from.** A reader read draft-dogru-scitt-disclosure-evidence-04
+cold and was tripped twice by the same shape:
+- §4.3 invalidates a window on counter regression while §1 asks the reader to
+  trust the counters. It reads as a contradiction. §6 resolves it — fifteen
+  pages later, with nothing at §4.3 saying so.
+- §4.3's clock-skew machinery reads like a workaround for something NTP would
+  fix. §4.4 gives the actual argument (a synchronised clock is an operator
+  *declaration*, not a measurement). Again, no pointer at the point of doubt.
+
+Both objections were answered by the document. Neither was answered *where the
+reader had them*. One tripped reader is an anecdote; the same shape twice is a
+structural property of the document.
+
+### 9.1 It must stay advisory prose, never a metric
+
+⛔ **Do not turn this into a count of cross-references.** §4.1 already measured
+that failure on this exact document: version C, *"published + cross-references,
+nothing improved"*, scored **78.3 anchors and passed the gate** while the
+genuinely better rewrite failed it. A rule that rewards pointers gets "see §4.4,
+see §6, see §5.2" sludge, which is worse than the silence it replaces.
+
+### 9.2 Signpost; do not reorder
+
+⛔ **A rewriter does not move another author's sections.** Reordering is editing
+someone's document, not rewriting their prose, and it changes what the section
+numbers mean for everyone already citing them. The rewriter's move is to **add
+the pointer**; hoisting material is a recommendation to make to the author, in
+the notes, not a change to make silently.
+
+### 9.3 How to find them
+
+A whole-document pass, not a per-section one — a section read in isolation
+cannot show this. For each place the text raises a tension, a risk, or an
+apparent contradiction, ask: **is it resolved here, or later?** If later, and
+nothing at this point says so, that is a forward dependency. Record it in the
+rewrite notes as *"tension raised in §X, resolved in §Y, no pointer at §X"*.
