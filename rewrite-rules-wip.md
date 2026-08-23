@@ -570,3 +570,119 @@ excluded"*).
   in front of an unrelated sentence scores exactly like a real relation. The
   guard that actually holds is not the ban but the alternative — **a named list of
   split-sites is more useful than a rate and cannot be optimised like one.**
+
+## 13. Build it twice (added 2026-08-23)
+
+The rules above check the prose. This checks whether the prose still carries a
+protocol. **Two implementations are built from two documents — the original and
+the rewrite — and compared with each other.** It tests both documents at once,
+and its two failure modes have different owners:
+
+| failure | what it means | whose |
+|---|---|---|
+| the original cannot be implemented without invention | **incompleteness** | the author's |
+| both can be implemented but the two do not interoperate | **semantic drift** | **ours** |
+| the rewrite's readers had to invent something the original's readers could cite | **we dropped implementable content** | **ours** |
+
+### 13.1 Procedure
+
+1. **At least two fresh subagents build from the original**, each in its own
+   context, **one forward pass**, no re-reading, no sight of the other's work and
+   no other document.
+2. **At least two more build from the rewrite**, under the same conditions, and
+   **without ever seeing the original.**
+3. **Every implementer keeps a decision log**: each choice it could not source
+   from the text, with the section where it looked. **This log is the
+   instrument** — see §13.2.
+4. The two sides are tested against each other: **interoperating** if the
+   protocol is symmetric, **substitutable** if they implement the same side of an
+   asymmetric one. **Substitutable means: the same inputs produce the same
+   outputs across a declared battery of cases.**
+5. ⛔ **No implementer sees the battery before it has built.** A case list read
+   in advance is a supplement to the specification, and the test then measures
+   the battery instead of the document. **Build first, battery afterwards.**
+6. ⚠ **The battery's boundary cases are generated from the value space, not from
+   the document** — null, zero, duplicate, both bounds equal, out of range.
+   Cases drawn from the text inherit the text's blind spots, and silence is what
+   this is looking for.
+
+### 13.2 Incompleteness is the intersection of the logs, not a build failure
+
+**"The implementation could not be built" will almost never happen.** An
+implementer produces *something*; the question is what it had to invent to do so.
+Keep the category, expect it to stay empty, and read the logs instead.
+
+**A decision that EVERY fresh implementer had to invent, at the same point, is a
+gap in the specification. A decision one of them invented is a bug report about
+that implementer.** One reader guessing is a fact about the reader; all of them
+guessing in the same place is a fact about the document.
+
+🔑 **Read the logs ACROSS the two sides as well as within each side.** Where the
+**rewrite**-builders all had to invent something and the **source**-builders can
+cite text for it, **the rewrite dropped implementable content** — and that is
+found by comparing logs, without waiting for the implementations to disagree.
+⚠ **Waiting for drift is not enough: two implementers of the same model family
+can guess alike and interoperate straight past the drop.** This is the §11 hole
+the section exists to close, and log comparison closes it more cheaply and more
+surely than the interop test does.
+
+⚠ **The log under-reports, and it must be described that way.** A decision the
+implementer's own priors make feel obvious never feels like a decision, so it is
+never logged. **It is an honest-effort record, not ground truth.** Using
+implementers from **different model families** shrinks the shared blind spot; it
+does not remove it.
+
+### 13.3 Drift is attributed, not assumed
+
+If the two sides fail to interoperate, the rewrite is **not** automatically at
+fault. **The source-built implementation can fill a gap from its own priors just
+as easily as the rewrite-built one can.**
+
+**A divergence implicates the rewrite only when the source-built side can cite
+source text for its decision AND that text is what the rewrite changed.**
+Otherwise the divergence is a finding about the **original** document — worth
+having, and a different result.
+
+### 13.4 What may be added back, and what may only be proposed
+
+- **Cited restoration.** If the source-built implementation cites source text for
+  something the rewrite dropped, **putting it back is repairing our own damage.**
+  That is owed, not authorship, and needs no special mark.
+- **Uncited addition.** If the detail is in neither document and the implementer
+  had to invent it, **it is new technical content and it is not ours to author.**
+  It may enter the rewrite **only marked as an addition**, and it is listed in
+  the report as a located proposal: *the implementer needed X at §N; here is
+  candidate text*. **The author synthesises; we reword and mark.**
+- ⚠ **A mark inside a document survives only until someone copies a paragraph out
+  of it.** The report therefore carries the same list independently, so the
+  additions remain identifiable if the marks are lost.
+
+### 13.5 ⛔ It produces a list, never a target
+
+The output is **the list of places where readers had to invent** and, for drift,
+**the sites where the two implementations disagreed.** Its length is a property
+of the list and may be stated. **No threshold, no target, no ratio, and nothing
+that improves by shortening the list on purpose** — §12.3 explains what happens
+otherwise, and §4.1 has the measurement.
+
+### 13.6 Two situations, two different results
+
+**When we rewrote the document ourselves**, we have both versions and we know
+exactly what we changed. If the two implementations disagree, we can look at the
+text we touched. **Neither implementation has to be right. They only have to
+match**, and the original is what they are matched against. That makes the test
+useful on its own: it tells us whether our rewrite broke something. ⚡ **It is the
+check §11 does not provide** — §11 proves that no normative sentence changed, and
+says nothing about whether the prose we *did* rewrite still carries what an
+implementer needs.
+
+**When the document is someone else's and we did not rewrite it**, there is no
+second version to compare against. A failure can be the specification, the
+implementer, or the battery of test cases, and nothing in the result tells them
+apart. **So the output is a list of places for a person to look at.** It is not a
+verdict, and it does not become a pass or a fail (§5).
+
+⚠ **This section owes a worked example and does not have one yet — it is written
+before its first run.** §12 shows a real before, after and cure; **§13 shows
+none, and the first run owes one**: a real gap from a real log, and a real
+divergence with its attribution.
