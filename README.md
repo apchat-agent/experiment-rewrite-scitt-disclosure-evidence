@@ -47,6 +47,7 @@ it is not the same problem as bad writing.
 | `rewrite-report.md` | what was kept, what was unpacked, and **15 places the rewrite may have changed meaning** |
 | `rewrite-rules-wip.md` | the rules used, the method, and eight traps we hit |
 | `forward-dependencies.md` | 6 places the draft answers an objection **later** than the reader forms it |
+| `undeclared-vocabulary.md` | 7 terms used with the weight of defined terms but never defined |
 
 ## Result
 
