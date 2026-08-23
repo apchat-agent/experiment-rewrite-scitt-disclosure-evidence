@@ -872,3 +872,49 @@ The example pair, verbatim:
   > performed the access, about an event that the same party chose to record.
   The verdict now carries its criterion; the property that produces it
   follows as support, and the two downstream problems elaborate it.
+
+## 17. Definition scope is shown, not narrated (added 2026-08-23 late, ayourtch's rule from the same live review)
+
+"This document does not define that again. It defines no new receipt format, no
+rules for policy decisions, and no transparency mechanism." — the reviewer:
+"Everything that is written, the document defines; everything that isn't, it
+doesn't. That prose is extraneous."
+
+The rule: **a definition is constructive. The document defines exactly what it
+writes down, and the absence of a definition is visible in the text itself —
+prose that enumerates what the document does not define adds nothing. Delete
+it.** Fold any real fact riding in the paragraph (here: both structures are
+payloads for SCITT registration) into the sentence that introduces the thing,
+and let the rest go.
+
+The boundary, stated precisely, because one class of negative sentence is
+load-bearing: **"does not DEFINE" narrates the text and dies; "does not CLAIM /
+does not PROVE" limits what the evidence means and lives** — provided it names
+its criterion (§16). Kept under this rule in the same document: "It is not
+proof that the transformation was applied" (a limit on the evidence, not on the
+text) and "This document does not define it as a failure condition, because the
+shape does not tell these cases apart" (a modality choice with its mechanism
+attached). Cut under this rule: the paragraph above, and "This document defines
+no countersignature, no anchoring, and no log format of its own" (the
+constructive sentence beside it — "SCITT already defines that place" — already
+carries the fact).
+
+Test: for each negative sentence ask "does this limit the MEANING of the
+mechanism, or describe the CONTENTS of the text?" Contents-description is
+extraneous; the table of contents already shows what is absent.
+
+The example pair, verbatim:
+
+- **What not to do:**
+  > Both structures are payloads. They are intended as Signed Statements on a
+  > Transparency Service, as defined in [RFC9943]. SCITT supplies registration
+  > on an append-only log that a third party can audit. This document does not
+  > define that again. It defines no new receipt format, no rules for policy
+  > decisions, and no transparency mechanism.
+
+- **What to do** (the accepted fix — the fact folds into the introduction, the
+  narration goes):
+  > This document defines two evidence structures for these two problems. Both
+  > are payloads for registration as Signed Statements on a SCITT Transparency
+  > Service [RFC9943], whose append-only log a third party can audit:
+  (followed directly by the two definitions).
