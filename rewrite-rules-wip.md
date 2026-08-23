@@ -997,3 +997,13 @@ is).
 
 Test: `grep -nP '[^\x00-\x7F]'` over the deliverable — every hit must be a
 letter in a name or a quoted example, never punctuation.
+
+**Sub-case, same rule (2026-08-23 23:55, reviewer's catch): the counterfactual
+restatement.** "The structure exists to make the transformation claim a signed
+object that can be registered. Without the structure, the claim is only text in
+an operator's documentation." — the second sentence is the first one's
+complement restated as a without-world, and adds nothing: a precise positive
+already implies its own counterfactual. Same test as the main rule, one step
+wider: a negative about the world-without-the-mechanism is the same class as a
+negative about the document. State what the mechanism makes possible, once;
+the without-case is visible in the complement.
