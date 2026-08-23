@@ -451,3 +451,122 @@ and verifiable*, not as *carefully preserved*.
   carry precise meaning with no MUST anywhere in sight, and deserve the same
   protection. Protect those by **naming the sections**, not by scanning for
   keywords.
+
+## 12. A split must conserve the relation (added 2026-08-23, from draft -07)
+
+The cap on sentence length is the rule that gets applied hardest, because it is
+the one a machine can check. **It has a casualty nobody was watching: the word
+that carried the relation between the two halves.**
+
+**When it applies.** Not to every split — a list split at *and* needs nothing,
+and adding *Also* to each fragment is the padding §12.3 bans. It applies when the
+split point carries one of five relations:
+
+| class | typical words |
+|---|---|
+| causal | because, since, therefore, so |
+| concessive | although, though, however, nevertheless |
+| conditional | if, unless, provided that |
+| contrastive | whereas, while, rather than, instead |
+| purpose | so that, in order to |
+
+**The rule: when a sentence carrying one of those relations is split, the
+relation is restated in the new sentences.** A cap on length is not a licence to
+delete relations.
+
+**What it costs, measured rather than promised:** on the worked pair below,
+restoring two relations took **eleven words**, about 30% over the published
+version of that passage. That is the price; it is not nothing, and a rewriter
+should budget for it rather than be told it is cheap.
+
+**A real pair**, -04 → -07 of the same document, quoted verbatim:
+
+> **-04:** *"The first came from review of -03 on the mailing list; the second
+> from an adversarial review of the implementation, **commissioned because** the
+> fix had loosened a default and its author was not the party who should clear
+> it."*
+>
+> **-07:** *"The first came from review of -03 on the list. The second came from
+> an adversarial review of the implementation. The fix had loosened a default.
+> Its author was not the party who should clear it."*
+
+Every fact survives. **The reason the review was commissioned does not**, and the
+reader now has to guess whether the loosened default caused the review or merely
+followed it.
+
+**And the compliant split**, which is what this rule asks for — the short
+sentences kept, the relations put back:
+
+> *"The first came from review of -03 on the list. The second came from an
+> adversarial review of the implementation. That review was commissioned because
+> the fix had loosened a default. It was also commissioned because the fix's
+> author was not the party who should clear it."*
+
+Four sentences of 10, 10, 11 and 16 words — **none of them near the cap.** The
+published -07 version of the same material is 36 words and states no relation;
+this is 47 and states both. **Conserving them costs eleven words.**
+
+### 12.1 The measurement that produced this
+
+Draft -04 against -07 of the same document, prose paragraphs only (tables, JSON,
+field lists and page furniture removed), after the author applied a
+sentence-length pass:
+
+| | -04 | -07 |
+|---|---|---|
+| prose sentences | 187 | 511 |
+| median sentence | 25 words | 10 words |
+| connectives per 100 words | 1.8 | 1.6 |
+| **sentences containing a connective** | **36%** | **19%** |
+
+⚠ **The word list matters and is not standard**, so the table is only
+reproducible with it: *because, therefore, thus, hence, so that, since, whereas,
+however, although, though, but, yet, while, in order to, as a result,
+consequently, that is, in other words, for example, for instance, which means,
+meaning that, if, unless, when, where, otherwise, instead, rather than, also,
+moreover, in addition, furthermore, first, second, then, finally, nevertheless.*
+A different list moves the absolute numbers; it was measured twice with two
+different lists and the direction was the same both times.
+
+**The author did not delete the connective tissue — the rate per 100 words barely
+moved. He spread it over 2.7× as many sentences.** Four sentences in five now
+arrive with no stated relation to the one before, where before it was two in
+three. The reported effect on a careful reader was exactly this: *"I can skim it,
+but I cannot understand the sentences I am reading."*
+
+### 12.2 The check
+
+**The manual check is a reader asking, at each paragraph, "why does this sentence
+follow that one?" and finding no answer in the text.** That question is the rule;
+everything below is an aid to it.
+
+The lint we run after each rewrite (`check-splits.py`, source and rewrite as its
+two arguments) names the sites where a source sentence carried one of the five
+relations and **no relation of that class survives in the matching text of the
+rewrite.** It prints the pairs and nothing
+else — **no count, no rate, no percentage, and it always exits 0.** It is an
+advisory list of places to look, and §12.3 says why it must stay one.
+
+⚠ **It is crude in a known direction and every site needs a human.** Matching is
+by content words, so a relation restated in *different words* than the source
+used is still reported. On its first run over the -04 → -07 pair it named seven
+sites, of which about five were genuine losses and two had the relation restated
+in other words (*"Unless X"* → *"Until then"*, *"rather than excluded"* → *"not
+excluded"*).
+
+### 12.3 ⚠ What this does not say, and what it must not become
+
+- **The net cohesion effect of that revision is not measured here.** One cohesion
+  axis fell and another rose: **referential cohesion — repeating a defined term
+  instead of a pronoun — went UP in -07.** The claim is only that **stated
+  inter-sentence relations per sentence halved.**
+- **It is not a reason to reverse a sentence-length pass**, which did what it was
+  supposed to do: over-cap sentences **27.1% → 5.9%**, -04 against -07, both
+  measured with the same checker (whole body, not the prose-only subset of the
+  table above — the two figures count different things).
+- ⛔ **Do not add "connectives per sentence" to §1.1, and do not aggregate the
+  lint's flags into a count or a rate.** §4.1 already showed what happens: a
+  rewrite that padded cross-references scored well and read no better. *"Therefore"*
+  in front of an unrelated sentence scores exactly like a real relation. The
+  guard that actually holds is not the ban but the alternative — **a named list of
+  split-sites is more useful than a rate and cannot be optimised like one.**

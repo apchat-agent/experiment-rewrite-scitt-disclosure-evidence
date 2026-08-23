@@ -42,12 +42,32 @@ it is not the same problem as bad writing.
 
 | file | what it is |
 |---|---|
-| `draft-dogru-scitt-disclosure-evidence-04.txt` | the original, unmodified, for comparison |
+| `draft-dogru-scitt-disclosure-evidence-04.txt` | the original, unmodified, for comparison — **everything in this repository was written against -04** |
+| `draft-dogru-scitt-disclosure-evidence-07.txt` | the author's own later revision, unmodified, added so the change can be read rather than described |
 | `draft-rewritten.md` | Abstract + §1–9 rewritten |
 | `rewrite-report.md` | what was kept, what was unpacked, and **15 places the rewrite may have changed meaning** |
 | `rewrite-rules-wip.md` | the rules used, the method, and eight traps we hit |
 | `forward-dependencies.md` | 6 places the draft answers an objection **later** than the reader forms it |
 | `undeclared-vocabulary.md` | 7 terms used with the weight of defined terms but never defined |
+
+### What -07 is doing here
+
+The author published **-07** on 2026-08-23. It applies a sentence-length pass to
+the non-normative prose, hoists the threat model into §1.1, and defines the terms
+that `undeclared-vocabulary.md` listed as undefined. Both revisions are included
+so a reader can check the effect instead of taking our word for it:
+**sentences over the 25-word cap fell from 27.1% to 5.9%** (-04 against -07, both
+measured with the same checker).
+
+⚠ **The two review files describe -04, and say so in their own first lines.**
+They are not a comment on -07.
+
+**One thing the pair showed that we did not expect, and it is now §12 of the
+rules:** the length pass **halved the share of sentences carrying a connective**,
+36% → 19%, without removing many connectives — they were spread across 2.7× as
+many sentences. Splitting *"X, because Y"* into *"X. Y."* drops the word carrying
+the relation, and a cap on sentence length does that by construction. **That is a
+defect in the rules we wrote, found by reading the author's revision.**
 
 ## Result
 
