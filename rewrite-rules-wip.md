@@ -331,3 +331,54 @@ cannot show this. For each place the text raises a tension, a risk, or an
 apparent contradiction, ask: **is it resolved here, or later?** If later, and
 nothing at this point says so, that is a forward dependency. Record it in the
 rewrite notes as *"tension raised in §X, resolved in §Y, no pointer at §X"*.
+
+## 10. Ad-hoc terminology (added 2026-08-23, after we broke this in the commit that added §9)
+
+**The rule: coin a term only when repetition makes the plain description
+unworkable. If you coin one, define it at first use, say it is yours, and use
+exactly one name for it.**
+
+Coining is not itself the fault. The concept §9 describes appears about thirty
+times in `forward-dependencies.md`, and repeating *"a place where the draft
+answers an objection later than the reader forms it"* thirty times would be
+unreadable. The fault is shipping a private label as though it were public
+vocabulary.
+
+### 10.1 Earn it
+
+If the concept appears two or three times, spell it out. **The test is whether
+the label saves the *reader* work or saves the *writer* work.** A term that
+exists so the writer can stop explaining is a cost transferred to the reader.
+
+### 10.2 Disclose it
+
+A coined term reads as established vocabulary, so a reader who does not
+recognise it assumes the gap is theirs and goes looking for a source that does
+not exist. Say plainly that it is your name for the thing.
+
+⚠ **In a specification this matters more than in prose.** A new term implies a
+defined concept with boundaries — an implementer may reasonably expect it to be
+testable. Introducing one without a definition invites exactly the guessing that
+a definitions section exists to prevent.
+
+### 10.3 Use exactly one name
+
+Two names for one idea is worse than a clumsy plain phrase, because the reader
+spends effort deciding whether they are two ideas.
+
+**What we did, recorded because it is the whole reason this section exists:** the
+commit that added §9 shipped **two** coined names for one concept. This file
+called it a *forward dependency*; the analysis file called it a *forward
+tension*, four times, and was named `forward-tensions.md`. Neither file said the
+term was ours. A reader would have met a filename naming a term they had never
+seen, then found a different term for it in the rules, with nothing marking
+either as ten minutes old. Unified on *forward dependency* the same day.
+
+### 10.4 Why this recurs
+
+**Naming a pattern feels like discovering it.** That is the incentive, and it is
+worth naming because it does not go away once you know about it. It is the same
+instinct as the *structural-metaphor locator* in the claudisms list (§2) — "the
+hinge", "the seam where" — wearing a lab coat. The question that defuses it: if
+the label were removed and the plain description put back everywhere, would the
+reader lose anything?

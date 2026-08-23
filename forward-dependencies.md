@@ -1,9 +1,10 @@
-# Forward tensions in draft-dogru-scitt-disclosure-evidence-04
+# Forward dependencies in draft-dogru-scitt-disclosure-evidence-04
 
-A *forward tension* is a place where the text raises a doubt, a risk, or an
-apparent contradiction, and the material that settles it appears later in the
-document, with nothing at the point of doubt saying so. The reader forms an
-objection and carries it for pages before the answer arrives.
+A *forward dependency* — our name for it, not a term of art, coined while
+writing this — is a place where the text raises a doubt, a risk, or an apparent
+contradiction, and the material that settles it appears later in the document,
+with nothing at the point of doubt saying so. The reader forms an objection and
+carries it for pages before the answer arrives.
 
 Every item below is answered by this draft. None of these is a technical
 defect, and none is a missing argument. The issue is order alone: the answer is
@@ -232,12 +233,12 @@ MAY.
   resolve a doubt §4.5 leaves open.
 - **§3.2 `action: none`.** The reader may ask what stops a deployment from
   declaring every class `none`. No verbatim resolution appears anywhere in the
-  document. This is therefore not a forward tension; if it is worth answering,
+  document. This is therefore not a forward dependency; if it is worth answering,
   it is a gap rather than an ordering problem.
 - **§3.2 "An implementation encountering a value in a field defined here MUST
   reject the structure."** No text states how an implementation distinguishes a
   value from a class name, an action name, or an identifier. Again no verbatim
-  resolution exists, so this is noted as a possible gap, not a forward tension.
+  resolution exists, so this is noted as a possible gap, not a forward dependency.
 
 ---
 

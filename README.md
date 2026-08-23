@@ -46,7 +46,7 @@ it is not the same problem as bad writing.
 | `draft-rewritten.md` | Abstract + §1–9 rewritten |
 | `rewrite-report.md` | what was kept, what was unpacked, and **15 places the rewrite may have changed meaning** |
 | `rewrite-rules-wip.md` | the rules used, the method, and eight traps we hit |
-| `forward-tensions.md` | 6 places the draft answers an objection **later** than the reader forms it |
+| `forward-dependencies.md` | 6 places the draft answers an objection **later** than the reader forms it |
 
 ## Result
 
