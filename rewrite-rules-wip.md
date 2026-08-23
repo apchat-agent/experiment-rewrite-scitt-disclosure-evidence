@@ -686,3 +686,76 @@ verdict, and it does not become a pass or a fail (§5).
 before its first run.** §12 shows a real before, after and cure; **§13 shows
 none, and the first run owes one**: a real gap from a real log, and a real
 divergence with its attribution.
+
+### 13.7 Test the document that will exist, not the one in front of you
+
+**Anything a draft says will be removed before publication is removed before the
+test is run.** Implementation Status sections, change logs, open-issue lists,
+notes to the RFC Editor, editorial scaffolding. **Build from what the published
+RFC will contain.**
+
+The reason is not tidiness. A draft can carry a load-bearing fact in a section
+that will not survive it, and every reader of the draft — including our own
+instruments — sees a document that is more determinate than the one implementers
+will get. **Testing the draft as it stands measures a document that is about to
+stop existing.**
+
+**Run it BOTH ways and report the difference.** The stripped run tells you whether
+the published document is implementable. **The delta between the two runs is the
+finding**: *these facts are load-bearing and live only in text that is scheduled
+for deletion.* A stripped-only run tells you that something is missing but not
+that it was silently present. **Each such fact is then either promoted into the
+normative text or lost, and that is the author's decision to make knowingly.**
+
+⚠ **Precision about the process, because it is easy to overstate:** BCP 205
+(RFC 7942) **recommends** that the Implementation Status section *should* be
+removed before publication. It does not mandate it. **The rule here does not
+depend on the recommendation being followed — it depends on the document saying
+of itself that the material is temporary.**
+
+**Found the hard way, on the first run of this section:** in
+draft-dogru-scitt-disclosure-evidence-07, readers repeatedly relied on §9
+Implementation Status for the direction of the skew comparison, for the `bounds`
+key names, and for the only concrete statement of *"the outcome it would have
+had"*. **The published RFC would be more ambiguous than the draft we tested, and
+nothing in the draft says so.**
+
+### 12.4 ⚠ Adverse evidence against this rule, filed on the day it was written
+
+**A human reader was shown the same paragraph twice — once as published and once
+with the relations restored under this rule — without being told which was which.
+His verdict: *"Both read as nonsense but the second one is easier to read."*
+The second was the published text. The first was ours.**
+
+So the only human evidence that exists runs **against** this section: restoring
+the relations made that paragraph **harder** to read for the reader the rule
+exists to serve.
+
+**What that does and does not establish:**
+- **Does:** one reader, reading blind, preferred the shorter disconnected version.
+  ⚡ **That is the only human data point in this document and it is negative.**
+- **Does not:** it is **n=1, one paragraph, presented out of context.** Both
+  versions were equally isolated, so **the comparison is fair even though the
+  absolute verdict ("nonsense") is confounded** — a paragraph cannot carry a
+  mechanism whose explanation lives in other sections.
+- ⚠ **The confound is testable rather than an excuse: show the same paragraph in
+  place, inside each whole document. That separates "this rule hurts" from "no
+  paragraph survives being read alone." Until that is run, this section stands on
+  the argument that deleting a relation deletes information — NOT on evidence
+  that restoring it helps a reader.**
+
+⚠ **Two scope limits that narrow the result without rescuing it:**
+- **What was compared was already-split prose against already-split prose plus
+  restored relations.** The published passage had had the sentence-length pass
+  applied to it; **the dense original this whole method starts from was never in
+  the comparison.** So the result is about §12 as an ADDITION to a length pass,
+  not about the length pass itself.
+- **The reader has a stated, prior preference for short sentences**, recorded
+  before this test existed. **That does not discount his verdict — he is the
+  reader the work is for, and surfacing exactly this kind of fact is why a human
+  was asked instead of another instrument.** But it does mean the result is
+  measured against one reader's known taste, and **whether restored relations
+  help other readers is unmeasured.**
+
+**The rule is left in place and the evidence against it is recorded beside it.
+Anyone applying §12 should know that the first time it met a human it lost.**
