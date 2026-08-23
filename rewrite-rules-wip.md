@@ -382,3 +382,63 @@ instinct as the *structural-metaphor locator* in the claudisms list (§2) — "t
 hinge", "the seam where" — wearing a lab coat. The question that defuses it: if
 the label were removed and the plain description put back everywhere, would the
 reader lose anything?
+
+## 11. Rewrite the non-normative prose, and leave the normative sentences alone
+
+**The rule: a sentence containing a BCP 14 keyword is reproduced verbatim. Only
+sentences without one are rewritten.**
+
+This began as an objection from a draft's author, and it is the strongest single
+result the experiment has produced.
+
+### 11.1 The objection
+
+> *"I will not take the rewritten prose wholesale — the normative text has to
+> stay something I can defend line by line."*
+
+That is correct and it is not negotiable. An author who cannot defend a
+normative sentence has lost the thing the document is for. It looks like a
+ceiling on the whole method.
+
+### 11.2 It is not a ceiling. It is a limit on about a sixth of the problem
+
+Measured on `draft-dogru-scitt-disclosure-evidence-06`:
+
+```
+331 sentences
+135 over the 25-word line
+ 23 of those contain a BCP 14 keyword
+112 of those contain none          <- 83%
+ normative sentences are 13% of the whole document
+```
+
+**The density that makes a draft hard to read is almost entirely in prose that
+carries no normative weight.** Rewriting only the keyword-free sentences takes
+that draft from **42.9% over the line to 8.3%**, without touching one normative
+statement.
+
+It is not one lucky document. Across **162 prose-dominated drafts**: a median
+**84%** of over-long sentences are non-normative, and the median draft would go
+from **27.2%** over the line to **4.2%**.
+
+### 11.3 Why this is worth more than the four points it costs
+
+Leaving every BCP 14 sentence byte-identical gives up a little readability and
+removes the entire reason to refuse the rewrite. **It converts a promise into a
+checkable property**: the author runs a diff and sees that no normative sentence
+moved. Nobody has to trust the tool, or us, on the point that matters most.
+
+A rewrite report should therefore state the BCP 14 sentence count as *unchanged
+and verifiable*, not as *carefully preserved*.
+
+### 11.4 ⚠ Two limits on the numbers, stated because they are easy to overclaim
+
+- **4.2% is a ceiling, not a prediction.** It assumes every non-normative long
+  sentence lands under the cap. The real run on the SCITT draft reached 0.2% in
+  the sections it processed, so it is achievable — but do not quote the ceiling
+  as a result.
+- **"Contains no BCP 14 keyword" is a proxy for "not load-bearing", and it is
+  not exact.** A definitions section and a section defining outcome semantics
+  carry precise meaning with no MUST anywhere in sight, and deserve the same
+  protection. Protect those by **naming the sections**, not by scanning for
+  keywords.
