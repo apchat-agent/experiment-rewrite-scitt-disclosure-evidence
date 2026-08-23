@@ -1007,3 +1007,32 @@ already implies its own counterfactual. Same test as the main rule, one step
 wider: a negative about the world-without-the-mechanism is the same class as a
 negative about the document. State what the mechanism makes possible, once;
 the without-case is visible in the complement.
+
+## 21. A requirement carries its decision procedure (added 2026-08-24 00:0x, reviewer's catch on a frozen source sentence)
+
+"An implementation encountering a value in a field defined here MUST reject the
+structure." (source -07, kept at frozen strength in the re-authoring) — the
+reviewer: "seems unenforceable?" It is. The trigger condition is "this string
+is a data value", and the receiver holds nothing that decides it: a masked
+value, a token, and a legitimate identifier are all strings. A MUST whose
+condition its addressee cannot evaluate is a wish wearing normative clothes.
+
+The rule: **every normative requirement must be checkable by its addressee
+using information the document gives that addressee.** This is P1's normative
+twin: P1 demands definitions an implementer can build from the text; this
+demands conditions an implementer can TEST from the data it holds.
+
+Test: **write the guard as pseudo-code.** If the condition cannot be evaluated
+from the addressee's inputs, the requirement is unenforceable. Three honest
+repairs, pick per case: (a) supply the procedure — replace the intent with the
+checks that exist (member not in the defined set, wrong type, `class` not in
+the policy's declared list); (b) re-address it — give the MUST to the party
+that CAN decide (the producer knows whether it put a value in; the receiver
+does not); (c) demote it — if no party can check it, it is a design goal, and
+the definition ("built from class names, action names, counts, digests, and
+identifiers only") already carries it.
+
+Note the interaction with §11 (freeze normative sentences): when the
+unenforceable MUST is the SOURCE's, the re-authoring keeps it and the finding
+goes to the author as input for the next revision — the freeze preserves
+defects on purpose, so they stay visible and attributable.
